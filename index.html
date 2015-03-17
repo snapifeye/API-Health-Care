@@ -4,18 +4,14 @@
 
 		<style>
 			html, body { margin: 0px; padding: 0px; }
-
 			.sn-widget-gallery--info-container {
 				display: inline-block !important;
 				position: relative !important;
 				width: 50% !important;
 			}
-
-
 			.dummy {
 				margin-top: 100%;
 			}
-
 			.smarty {
 				position: absolute;
 				top: 0;
@@ -23,7 +19,6 @@
 				left: 0;
 				right: 0;
 			}
-
 			.data-wrapper {
 				position: absolute;
 				width: 95%;
@@ -43,7 +38,6 @@
 				font-family: Helvetica;
 				text-transform: uppercase;
 				letter-spacing: 1px;
-
 				color: #FFFFFF;
 				font-weight: 600;
 				font-size: 53px;
@@ -55,18 +49,15 @@
 			.photo-question {
 				font-style: italic;
 				font-family: Helvetica;
-
 				color: #FFFFFF;
 				font-weight: 100;
 				font-size: 36px;
 				line-height: 43px;
 			}
-
 			.event-hash-tag {
 				position: absolute;
 				bottom: 200px;
 				right: 50px;
-
 				color: #FFFFFF;
 				font-size: 36px;
 				line-height: 43px;
@@ -82,7 +73,6 @@
 				}
 				return fullName;
 			}
-
 			function resolveLastName(photo) {
 				var fullName = (photo.meta || {}).name;
 				if (fullName) {
@@ -90,7 +80,6 @@
 				}
 				return fullName;
 			}
-
 			function resolveQuestion1(data) {
 				var questions = (data.event.offer_questions || []);
 				for (var i = 0; i < questions.length; i++) {
@@ -99,10 +88,8 @@
 						return (data.photo.meta || {})[question]
 					}
 				}
-
 				return null;
 			}
-
 			function resolveQuestion2(data) {
 				var questions = (data.event.offer_questions || []);
 				for (var i = 0; i < questions.length; i++) {
@@ -111,7 +98,6 @@
 						return (data.photo.meta || {})[question]
 					}
 				}
-
 				return null;
 			}
 			
@@ -140,4 +126,3 @@
 
 	</body>
 </html>
-
