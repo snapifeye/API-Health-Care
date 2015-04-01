@@ -14,10 +14,15 @@
 
 
 		<style>
-			html, body { margin: 0px; padding: 0px;}
+			html,
+
+			body {
+    background-image: url("/Users/stevenleeanderson/LandingPages/API-Health-Care/Monitor_dragon_final.png");
+    background-color: #transparent !important;
+}
 
 			.sn-widget-wrapper{
-				background:#242424 !important;
+				background:transparent !important;
 
 
 			}
@@ -32,12 +37,17 @@
 			}
 
 			.sn-widget-gallery--info-container {
-				display: inline-block !important;
+				display: none !important;
 				position: relative !important;
 				width: 50% !important;
 			}
 			.dummy {
-				margin-top: 100%;
+				margin-top:0;
+				position: fixed;
+				top: 60%;
+				bottom: 0;
+				left: 0;
+				right: 0;
 			}
 			.smarty {
 				position: absolute;
@@ -54,6 +64,7 @@
 				margin-top: -150px;
 
 			}
+
 			.data-wrapper div {
 				width: 95%;
 				padding: 0px 75px;
@@ -61,6 +72,7 @@
 
 			.photo-meta-first-name,
 			.photo-meta-last-name {
+				display:none;
 				font-style: italic;
 				font-family: Helvetica;
 				text-transform: uppercase;
@@ -71,9 +83,11 @@
 				line-height: 55px;
 			}
 			.photo-meta-last-name {
+				display:none;
 				margin-bottom: 25px;
 			}
 			.photo-question {
+				display:none;
 				font-style: italic;
 				font-family: Helvetica;
 				color: #FFFFFF;
@@ -82,6 +96,7 @@
 				line-height: 43px;
 			}
 			.event-hash-tag {
+				display:none;
 				position: absolute;
 				bottom: 200px;
 				right: 50px;
@@ -131,21 +146,17 @@
 		</script>
 
 	</head>
-	<body>
+	<body style="background:transparent">
 
-		<snapifeye-widget class="full-screen" params="eventId: 187, period: 7500, custom: true">
-			<!-- This content inside of there is optional. This will customize the left side text -->
-			<!-- Event object: $data.event -->
-			<!-- Photo object: $data.photo -->
-			<div class="dummy"></div>
+
+		<div class="dummy">
+			</div>
+
+
+
 			<div class="smarty">
-				<div class="data-wrapper">
-					<div class="photo-meta-first-name" data-bind="text: resolveFirstName($data.photo)"></div>
-					<div class="photo-meta-last-name" data-bind="text: resolveLastName($data.photo)"></div>
+				<snapifeye-widget class="full-screen" params="eventId: 187, period: 7500, custom: true">
 
-					<div class="photo-question" data-bind="text: resolveQuestion1($data)"></div>
-					<div class="photo-question" data-bind="text: resolveQuestion2($data)"></div>
-				</div>
 
 			</div>
                 <div class="event-hash-tag">#HiMSS15</div>
