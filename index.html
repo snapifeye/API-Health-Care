@@ -14,40 +14,27 @@
 
 
 		<style>
-			html,
-
+			html, body {
+				margin: 0px;
+				padding: 0px;
+			}
 			body {
-    background-image: url("https://github.com/snapifeye/API-Health-Care/blob/gh-pages/LandingPages/API-Health-Care/Monitor_dragon_final.png?raw=true");
-    background-color: #transparent !important;
-}
-
-			.sn-widget-wrapper{
-				background:transparent !important;
-
-
-			}
-
-			.sn-widget-gallery--image-container {
-				position: absolute;
-  				top: 50px !important;
-  				bottom: 0px;
-  				right: 0px;
-  				left: 50%;
-			}
+				background-image: url("LandingPages/API-Health-Care/Monitor_dragon_final.png") !important;
+				background-color: transparent !important;
 			}
 
 			.sn-widget-gallery--info-container {
-				display: none !important;
+				display: inline-block !important;
 				position: relative !important;
 				width: 50% !important;
 			}
+
+			.sn-widget-wrapper {
+				background-color: transparent !important;
+			}
+
 			.dummy {
-				margin-top:0;
-				position: fixed;
-				top: 60%;
-				bottom: 0;
-				left: 0;
-				right: 0;
+				margin-top: 100%;
 			}
 			.smarty {
 				position: absolute;
@@ -56,23 +43,30 @@
 				left: 0;
 				right: 0;
 			}
-			.data-wrapper {
+			.image-wrapper {
 				position: absolute;
-				width: 95%;
-				height: 200px;
-				top: 50%;
-				margin-top: -150px;
+				bottom: 0px;
+				left: 0px;
+				right: 0px;
+				height: auto;
 
 			}
+			.image-wrapper img {
+				display: block;
+				width: calc(100%  /3);
+				height: 200px;
+				float: right;
+				background-color: #444444;
+				padding: 0px;
+				margin: 0px;
+			}
 
-			.data-wrapper div {
-				width: 95%;
-				padding: 0px 75px;
+			.clear {
+				clear: both;
 			}
 
 			.photo-meta-first-name,
 			.photo-meta-last-name {
-				display:none;
 				font-style: italic;
 				font-family: Helvetica;
 				text-transform: uppercase;
@@ -83,11 +77,9 @@
 				line-height: 55px;
 			}
 			.photo-meta-last-name {
-				display:none;
 				margin-bottom: 25px;
 			}
 			.photo-question {
-				display:none;
 				font-style: italic;
 				font-family: Helvetica;
 				color: #FFFFFF;
@@ -96,7 +88,6 @@
 				line-height: 43px;
 			}
 			.event-hash-tag {
-				display:none;
 				position: absolute;
 				bottom: 200px;
 				right: 50px;
@@ -108,38 +99,24 @@
 		</style>
 
 		<script type="text/javascript">
-			function resolveFirstName(photo) {
-				var fullName = (photo.meta || {}).name;
-				if (fullName) {
-					fullName = fullName.split(" ")[0];
-				}
-				return fullName;
+			var photo1 = null;
+			var photo2 = null;
+			var photo3 = null;
+
+			function resolveImage1() {
+				return photo1 ? photo1.url : null;
 			}
-			function resolveLastName(photo) {
-				var fullName = (photo.meta || {}).name;
-				if (fullName) {
-					fullName = fullName.split(" ").pop();
-				}
-				return fullName;
+			function resolveImage2() {
+				return photo2 ? photo2.url : null;
 			}
-			function resolveQuestion1(data) {
-				var questions = (data.event.offer_questions || []);
-				for (var i = 0; i < questions.length; i++) {
-					var question = questions[i];
-					if (question.indexOf("name of") > -1) {
-						return (data.photo.meta || {})[question]
-					}
-				}
-				return null;
+			function resolveImage3() {
+				return photo3 ? photo3.url : null;
 			}
-			function resolveQuestion2(data) {
-				var questions = (data.event.offer_questions || []);
-				for (var i = 0; i < questions.length; i++) {
-					var question = questions[i];
-					if (question.indexOf("located") > -1) {
-						return (data.photo.meta || {})[question]
-					}
-				}
+
+			function resolveImage(data) {
+				photo1 = photo2;
+				photo2 = photo3;
+				photo3 = data.photo;
 				return null;
 			}
 
@@ -148,18 +125,21 @@
 	</head>
 	<body style="background:transparent">
 
-
-		<div class="dummy">
-			</div>
-
-
-
+		<snapifeye-widget class="full-screen" params="eventId: 187, period: 7500, custom: true">
+			<!-- This content inside of there is optional. This will customize the left side text -->
+			<!-- Event object: $data.event -->
+			<!-- Photo object: $data.photo -->
+			<div class="dummy"></div>
 			<div class="smarty">
-				<snapifeye-widget class="full-screen" params="eventId: 187, period: 7500, custom: true">
-
-
+				<div class="image-wrapper">
+					<img data-bind="attr: { src: resolveImage3() }"></img>
+					<img data-bind="attr: { src: resolveImage2() }"></img>
+					<img data-bind="attr: { src: resolveImage1() }"></img>
+					<div class="hidden" data-bind="attr: { src: resolveImage($data) }"></div>
+					<div class="clear"></div>
+				</div>
 			</div>
-                <div class="event-hash-tag">#HiMSS15</div>
+      <div class="event-hash-tag"></div>
 		</snapifeye-widget>
 
 	</body>
