@@ -1,1 +1,158 @@
-<html>	<head>		<script type="text/javascript" src="http://events.snapifeye.com/snapifeye-widget/snapifeye-widget-all.min.js"></script><meta name="twitter:card" content="photo" /><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta property="og:URL" content="http://events.snapifeye.com/API-Heath-Care/"/><meta property="og:title" content="Slaying the beast of data and sparking success!"/><meta property="og:type" content="article"/><meta property="og:image" content="http://www.mdbuyline.com/wp-content/uploads/2013/05/API_Healthcare_logo_LG.jpg"/><meta property="og:description"        content="Control Your Destiny Through Intelligent Workforce Data" /><meta property="article:author"        content="Snapifeye" /><meta property="article:publisher"     content="Snapifeye" />		<style>			html, body {				margin: 0px;				padding: 0px;			}			body {				background-image: url("/Users/stevenleeanderson/LandingPages/API-Health-Care/Monitor_dragon_final.png")	 !important;				background-color: transparent !important;			}			.sn-widget-gallery--image{				padding:100px;			}			.sn-widget-gallery--info-container {				display: inline-block !important;				position: relative !important;				width: 50% !important;			}			.sn-widget-wrapper {				background-color: transparent !important;			}			.dummy {				margin-top: 100%;			}			.smarty {				float:right;				top: 0;				bottom: 0;				left: 0;				right: 0;			}			.image-wrapper {				position: fixed;				bottom: 7%;				left: 0%;				right:0px;				height: auto;				width:600px;				overflow:visible:			}			.image-wrapper img {				display: block;				width: calc(100%  /3);				height: 200px;				float: right;				background-color: #444444;				padding: 0px;				margin: 0px;			}			.clear {				clear: both;			}			.photo-meta-first-name,			.photo-meta-last-name {				font-style: italic;				font-family: Helvetica;				text-transform: uppercase;				letter-spacing: 1px;				color: #FFFFFF;				font-weight: 600;				font-size: 53px;				line-height: 55px;			}			.photo-meta-last-name {				margin-bottom: 25px;			}			.photo-question {				font-style: italic;				font-family: Helvetica;				color: #FFFFFF;				font-weight: 100;				font-size: 36px;				line-height: 43px;			}			.event-hash-tag {				position: absolute;				bottom: 200px;				right: 50px;				color: #FFFFFF;				font-size: 36px;				line-height: 43px;				font-family: Helvetica;			}			}		</style>		<script type="text/javascript">			var photo1 = null;			var photo2 = null;			var photo3 = null;			function resolveImage1() {				return photo1 ? photo1.url : null;			}			function resolveImage2() {				return photo2 ? photo2.url : null;			}			function resolveImage3() {				return photo3 ? photo3.url : null;			}			function resolveImage(data) {				photo1 = photo2;				photo2 = photo3;				photo3 = data.photo;				return null;			}		</script>	</head>	<body style="background:transparent">		<img src="/Users/stevenleeanderson/LandingPages/API-Health-Care/text.png"style="float:left;padding:10px 0px 0px 0px	">		<snapifeye-widget class="full-screen" params="eventId: 187, period: 7500, custom: true">			<!-- This content inside of there is optional. This will customize the left side text -->			<!-- Event object: $data.event -->			<!-- Photo object: $data.photo -->			<div class="dummy"></div>				<div class="image-wrapper">					<img data-bind="attr: { src: resolveImage3() }"></img>					<img data-bind="attr: { src: resolveImage2() }"></img>					<img data-bind="attr: { src: resolveImage1() }"></img>					<div class="hidden" data-bind="attr: { src: resolveImage($data) }"></div>					<div class="clear"></div>				</div>			</div>      <div class="event-hash-tag"></div>		</snapifeye-widget>	</body></html>
+<html>
+	<head>
+		<script type="text/javascript" src="http://events.snapifeye.com/snapifeye-widget/snapifeye-widget-all.min.js"></script>
+
+<meta name="twitter:card" content="photo" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta property="og:URL" content="http://events.snapifeye.com/API-Heath-Care/"/>
+<meta property="og:title" content="Slaying the beast of data and sparking success!"/>
+<meta property="og:type" content="article"/>
+<meta property="og:image" content="http://www.mdbuyline.com/wp-content/uploads/2013/05/API_Healthcare_logo_LG.jpg"/>
+<meta property="og:description"        content="Control Your Destiny Through Intelligent Workforce Data" />
+<meta property="article:author"        content="Snapifeye" />
+<meta property="article:publisher"     content="Snapifeye" />
+
+
+		<style>
+			html, body {
+				margin: 0px;
+				padding: 0px;
+			}
+			body {
+				background-image: url("https://github.com/snapifeye/API-Health-Care/blob/gh-pages/Monitor_dragon_final.png?raw=true")	 !important;
+				background-color: transparent !important;
+			}
+
+			.sn-widget-gallery--image{
+				padding:100px;
+			}
+
+			.sn-widget-gallery--info-container {
+				display: inline-block !important;
+				position: relative !important;
+				width: 50% !important;
+			}
+
+			.sn-widget-wrapper {
+				background-color: transparent !important;
+			}
+
+			.dummy {
+				margin-top: 100%;
+			}
+			.smarty {
+				float:right;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+			}
+			.image-wrapper {
+				position: fixed;
+				bottom: 7%;
+				left: 0%;
+				right:0px;
+				height: auto;
+				width:600px;
+				overflow:visible:
+
+			}
+			.image-wrapper img {
+				display: block;
+				width: calc(100%  /3);
+				height: 200px;
+				float: right;
+				background-color: #444444;
+				padding: 0px;
+				margin: 0px;
+
+			}
+
+			.clear {
+				clear: both;
+			}
+
+			.photo-meta-first-name,
+			.photo-meta-last-name {
+				font-style: italic;
+				font-family: Helvetica;
+				text-transform: uppercase;
+				letter-spacing: 1px;
+				color: #FFFFFF;
+				font-weight: 600;
+				font-size: 53px;
+				line-height: 55px;
+			}
+			.photo-meta-last-name {
+				margin-bottom: 25px;
+			}
+			.photo-question {
+				font-style: italic;
+				font-family: Helvetica;
+				color: #FFFFFF;
+				font-weight: 100;
+				font-size: 36px;
+				line-height: 43px;
+			}
+			.event-hash-tag {
+				position: absolute;
+				bottom: 200px;
+				right: 50px;
+				color: #FFFFFF;
+				font-size: 36px;
+				line-height: 43px;
+				font-family: Helvetica;
+			}
+
+			}
+
+		</style>
+
+		<script type="text/javascript">
+			var photo1 = null;
+			var photo2 = null;
+			var photo3 = null;
+
+			function resolveImage1() {
+				return photo1 ? photo1.url : null;
+			}
+			function resolveImage2() {
+				return photo2 ? photo2.url : null;
+			}
+			function resolveImage3() {
+				return photo3 ? photo3.url : null;
+			}
+
+			function resolveImage(data) {
+				photo1 = photo2;
+				photo2 = photo3;
+				photo3 = data.photo;
+				return null;
+			}
+
+		</script>
+
+	</head>
+	<body style="background:transparent">
+		<img src="https://github.com/snapifeye/API-Health-Care/blob/gh-pages/text.png?raw=true"style="float:left;padding:10px 0px 0px 0px	">
+
+
+		<snapifeye-widget class="full-screen" params="eventId: 187, period: 7500, custom: true">
+			<!-- This content inside of there is optional. This will customize the left side text -->
+			<!-- Event object: $data.event -->
+			<!-- Photo object: $data.photo -->
+			<div class="dummy"></div>
+
+				<div class="image-wrapper">
+					<img data-bind="attr: { src: resolveImage3() }"></img>
+					<img data-bind="attr: { src: resolveImage2() }"></img>
+					<img data-bind="attr: { src: resolveImage1() }"></img>
+					<div class="hidden" data-bind="attr: { src: resolveImage($data) }"></div>
+					<div class="clear"></div>
+				</div>
+			</div>
+      <div class="event-hash-tag"></div>
+		</snapifeye-widget>
+
+	</body>
+</html>
