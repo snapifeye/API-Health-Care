@@ -7,7 +7,7 @@
 <meta property="og:URL" content="http://events.snapifeye.com/API-Heath-Care/"/>
 <meta property="og:title" content="Slaying the beast of data and sparking success!"/>
 <meta property="og:type" content="article"/>
-<meta property="og:image" content="https://github.com/snapifeye/API-Health-Care/blob/gh-pages/text.png?raw=true"/>
+<meta property="og:image" content="http://www.mdbuyline.com/wp-content/uploads/2013/05/API_Healthcare_logo_LG.jpg"/>
 <meta property="og:description"        content="Control Your Destiny Through Intelligent Workforce Data" />
 <meta property="article:author"        content="Snapifeye" />
 <meta property="article:publisher"     content="Snapifeye" />
@@ -19,17 +19,25 @@
 				padding: 0px;
 			}
 			body {
-				background-image: url("https://github.com/snapifeye/API-Health-Care/blob/gh-pages/Monitor_dragon_final.png?raw=true")	 !important;
+				background-image: url("LandingPages/API-Health-Care/Monitor_dragon_final.png") !important;
 				background-color: transparent !important;
 			}
 
-			.sn-widget-gallery--image{
-				padding:150px;
+			.sn-widget-gallery--image {
+				padding:12.5% 0%
+
+
 			}
+
+			.sn-widget-gallery--image--container {
+
+
+			}
+
 
 			.sn-widget-gallery--info-container {
 				display: inline-block !important;
-				position: relative !important;
+				position: absolute !important;
 				width: 50% !important;
 			}
 
@@ -41,31 +49,27 @@
 				margin-top: 100%;
 			}
 			.smarty {
-				float:right;
+				position: absolute;
 				top: 0;
 				bottom: 0;
 				left: 0;
 				right: 0;
 			}
 			.image-wrapper {
-				position: fixed;
-				bottom: 7%;
-				left: 0%;
-				right:0px;
+				position: absolute;
+				bottom: 0px;
+				left: 0px;
+				right: 0px;
 				height: auto;
-				width:600px;
-				overflow:visible:
 
 			}
 			.image-wrapper img {
 				display: block;
 				width: calc(100%  /3);
-				height: 200px;
 				float: right;
 				background-color: #444444;
 				padding: 0px;
 				margin: 0px;
-
 			}
 
 			.clear {
@@ -103,9 +107,6 @@
 				line-height: 43px;
 				font-family: Helvetica;
 			}
-
-			}
-
 		</style>
 
 		<script type="text/javascript">
@@ -113,41 +114,40 @@
 			var photo2 = null;
 			var photo3 = null;
 
-			function resolveImage1() {
-				return photo1 ? photo1.url : null;
-			}
-			function resolveImage2() {
-				return photo2 ? photo2.url : null;
-			}
-			function resolveImage3() {
-				return photo3 ? photo3.url : null;
+			function imageAtEarlierIndex(data, previousNumber) {
+				previousIndex = data.selected_image_index + previousNumber;
+				if (previousIndex >= data.photos.length) {
+					previousIndex = 0
+				}
+
+				return data.photos[previousIndex].url;
 			}
 
-			function resolveImage(data) {
-				photo1 = photo2;
-				photo2 = photo3;
-				photo3 = data.photo;
-				return null;
+			function resolveImage1(data) {
+				return imageAtEarlierIndex(data, 1);
 			}
-
+			function resolveImage2(data) {
+				return imageAtEarlierIndex(data, 2);
+			}
+			function resolveImage3(data) {
+				return imageAtEarlierIndex(data, 3);
+			}
 		</script>
 
 	</head>
 	<body style="background:transparent">
-		<img src="https://github.com/snapifeye/API-Health-Care/blob/gh-pages/text.png?raw=true"style="float:left;padding:10px 0px 0px 0px	">
+		<img src="https://raw.githubusercontent.com/snapifeye/API-Health-Care/gh-pages/text.png" style="float:left">
 
-
-		<snapifeye-widget class="full-screen" params="eventId: 187, period: 7500, custom: true">
+		<snapifeye-widget class="full-screen" params="eventId: 187, period: 7500	, custom: true">
 			<!-- This content inside of there is optional. This will customize the left side text -->
 			<!-- Event object: $data.event -->
 			<!-- Photo object: $data.photo -->
 			<div class="dummy"></div>
-
+			<div class="smarty">
 				<div class="image-wrapper">
-					<img data-bind="attr: { src: resolveImage3() }"></img>
-					<img data-bind="attr: { src: resolveImage2() }"></img>
-					<img data-bind="attr: { src: resolveImage1() }"></img>
-					<div class="hidden" data-bind="attr: { src: resolveImage($data) }"></div>
+					<img data-bind="attr: { src: resolveImage1($data) }"></img>
+					<img data-bind="attr: { src: resolveImage2($data) }"></img>
+					<img data-bind="attr: { src: resolveImage3($data) }"></img>
 					<div class="clear"></div>
 				</div>
 			</div>
